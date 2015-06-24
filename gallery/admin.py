@@ -97,7 +97,8 @@ class MediaFileAdminForm(forms.ModelForm):
     mediafile = forms.ModelChoiceField(queryset=MediaFile.objects.filter(type='image'),
                                 widget=MediaFileWidget(attrs={'class': 'image-fk'}), label=_('media file'))
     class Meta:
-        model = GalleryMediaFile
+        model  = GalleryMediaFile
+        fields = ['mediafile']
 
 
 class GalleryMediaFileAdmin(admin.ModelAdmin):
